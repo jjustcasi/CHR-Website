@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee/CHR Dashboard - Civilian HR</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link rel="stylesheet" href="dashboards.css">
+</head>
+<body>
+    <div class="page-shell">
+        <header class="dash-header">
+            <div>
+                <a href="index.html" class="back-link"><i class="fas fa-arrow-left"></i> Home</a>
+                <h1><i class="fas fa-user-tie"></i> Employee / CHR Dashboard</h1>
+                <p>Personal workspace for announcements, leaves, training, PDS, performance, and AI support.</p>
+            </div>
+            <div class="header-actions">
+                <button id="refreshUser" class="btn btn-secondary"><i class="fas fa-rotate"></i> Refresh</button>
+                <button id="logoutUser" class="btn btn-danger"><i class="fas fa-right-from-bracket"></i> Logout</button>
+            </div>
+        </header>
+
+        <div id="userMessage" class="message hidden"></div>
+
+        <div class="dashboard-layout">
+            <aside class="side-panel" aria-label="User dashboard navigation">
+                <div class="brand-cap">
+                    <div class="brand-row">
+                        <div class="brand-icon"><i class="fas fa-id-card"></i></div>
+                        <h1 class="brand-title">CHRIS</h1>
+                    </div>
+                    <p class="brand-subtitle">Civilian HR Information System</p>
+                </div>
+
+                <div class="side-panel-head">
+                    <h3>User Menu</h3>
+                    <button id="userSidebarToggle" type="button" class="side-toggle" aria-label="Toggle sidebar menu">
+                        <i class="fas fa-bars"></i>
+                    </button>
+                </div>
+
+                <div class="side-profile">
+                    <div class="side-profile-avatar"><i class="fas fa-user"></i></div>
+                    <div class="side-profile-copy">
+                        <span>Welcome,</span>
+                        <strong id="userDisplayName">User</strong>
+                        <span>CHR Employee</span>
+                    </div>
+                </div>
+
+                <button type="button" class="side-btn is-active" data-target="user-dashboard" data-short="DB">Dashboard</button>
+                <button type="button" class="side-btn" data-target="user-pds" data-short="PR">Personnel</button>
+                <button type="button" class="side-btn" data-target="user-leaves" data-short="LV">Leave Management</button>
+                <button type="button" class="side-btn" data-target="user-attendance" data-short="AT">Attendance</button>
+                <button type="button" class="side-btn" data-target="user-training" data-short="TR">Training &amp; Development</button>
+                <button type="button" class="side-btn" data-target="user-performance" data-short="PF">Performance</button>
+                <button type="button" class="side-btn" data-target="user-announcements" data-short="AN">Announcement</button>
+                <button type="button" class="side-btn" data-target="user-reports" data-short="RP">Reports</button>
+                <button type="button" class="side-btn" data-target="user-settings" data-short="ST">Settings</button>
+                <button type="button" class="side-btn" data-target="user-chatbot" data-short="AI">AI Chatbot</button>
+            </aside>
+
+            <main class="dashboard-main">
+                <section id="user-dashboard" class="panel dashboard-section">
+                    <div class="stats-grid">
+                        <article class="stat-card">
+                            <div class="label">Announcements</div>
+                            <div class="value" id="userStatAnnouncements">0</div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="label">Pending Leaves</div>
+                            <div class="value" id="userStatLeaves">0</div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="label">Training</div>
+                            <div class="value" id="userStatTraining">0</div>
+                        </article>
+                        <article class="stat-card">
+                            <div class="label">Performance</div>
+                            <div class="value" id="userStatPerformance">0</div>
+                        </article>
+                    </div>
+                </section>
+
+                <section id="user-announcements" class="panel dashboard-section">
+            <h2><i class="fas fa-bullhorn"></i> Announcement Board</h2>
+            <div id="userAnnouncementList" class="list"></div>
+                </section>
+
+                <section id="user-leaves" class="panel dashboard-section is-hidden">
+            <h2><i class="fas fa-calendar-days"></i> Leave Management</h2>
+            <form id="leaveForm" class="grid-form">
+                <input id="leaveType" placeholder="Leave Type (Sick, Vacation, etc.)" required>
+                <input id="leaveStart" type="date" required>
+                <input id="leaveEnd" type="date" required>
+                <textarea id="leaveReason" placeholder="Reason"></textarea>
+                <button class="btn" type="submit">Submit Leave Request</button>
+            </form>
+            <div class="table-wrap" id="userLeaveWrap"></div>
+                </section>
+
+                <section id="user-training" class="panel dashboard-section is-hidden">
+            <h2><i class="fas fa-graduation-cap"></i> Training / Schooling Monitoring</h2>
+            <div class="table-wrap" id="userTrainingWrap"></div>
+                </section>
+
+                <section id="user-attendance" class="panel dashboard-section is-hidden">
+            <h2><i class="fas fa-clock"></i> Attendance</h2>
+            <p>Attendance tracking is available from the admin side for now. This section keeps the same dashboard structure and can be connected later.</p>
+                </section>
+
+                <section id="user-pds" class="panel dashboard-section is-hidden">
+            <h2><i class="fas fa-id-card"></i> PDS</h2>
+            <form id="pdsForm" class="grid-form">
+                <input id="pdsFullName" placeholder="Full Name">
+                <input id="pdsContact" placeholder="Contact Number">
+                <input id="pdsEmergency" placeholder="Emergency Contact">
+                <input id="pdsPosition" placeholder="Position Title">
+                <input id="pdsDepartment" placeholder="Department">
+                <textarea id="pdsAddress" placeholder="Address"></textarea>
+                <textarea id="pdsSchool" placeholder="Educational Background"></textarea>
+                <textarea id="pdsSkills" placeholder="Skills and Certifications"></textarea>
+                <button class="btn" type="submit">Save PDS</button>
+            </form>
+                </section>
+
+                <section id="user-performance" class="panel dashboard-section is-hidden">
+            <h2><i class="fas fa-chart-line"></i> Performance and Evaluation Management</h2>
+            <div class="table-wrap" id="userPerformanceWrap"></div>
+                </section>
+
+                <section id="user-chatbot" class="panel dashboard-section is-hidden">
+            <h2><i class="fas fa-robot"></i> AI Chatbot for Basic Inquiries</h2>
+            <div id="chatWindow" class="chat-window"></div>
+            <form id="chatForm" class="inline-form">
+                <input id="chatInput" placeholder="Ask about leaves, training, announcements, PDS, performance..." required>
+                <button type="submit" class="btn">Send</button>
+            </form>
+                </section>
+
+                <section id="user-reports" class="panel dashboard-section is-hidden">
+            <h2><i class="fas fa-file-lines"></i> Reports</h2>
+            <p>This is the user-side reports area. You can place downloadable summaries, status reports, or future exports here.</p>
+                </section>
+
+                <section id="user-settings" class="panel dashboard-section is-hidden">
+            <h2><i class="fas fa-gear"></i> Settings</h2>
+            <p>Profile and account settings can be connected here later.</p>
+                </section>
+            </main>
+        </div>
+    </div>
+
+    <script src="user-dashboard.js"></script>
+</body>
+</html>

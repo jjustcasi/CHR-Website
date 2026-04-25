@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Civilian HR - Human Resources Solutions</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <!-- Navigation Bar -->
+    <nav class="navbar">
+        <div class="nav-container">
+            <div class="logo">
+                <i class="fas fa-briefcase"></i> Civilian HR
+            </div>
+            <div class="nav-buttons">
+                <button class="btn btn-login" onclick="openLoginModal()">Login</button>
+                <button class="btn btn-signup" onclick="openSignupModal()">Sign Up</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h1>Welcome to Civilian HR</h1>
+            <p>Transform Your Human Resources Management</p>
+            <button class="btn btn-cta" onclick="openSignupModal()">Get Started</button>
+        </div>
+        <div class="hero-image">
+            <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=600&h=400&fit=crop" alt="Team collaboration">
+        </div>
+    </section>
+
+    <!-- Vision Section -->
+    <section class="vision-section">
+        <h2>Our Vision</h2>
+        <div class="vision-content">
+            <div class="vision-card">
+                <i class="fas fa-eye"></i>
+                <h3>Vision</h3>
+                <p>To be the leading HR management platform that empowers organizations to build, nurture, and grow exceptional teams through innovative technology and people-centered solutions.</p>
+            </div>
+            <div class="vision-card">
+                <i class="fas fa-bullseye"></i>
+                <h3>Mission</h3>
+                <p>To simplify HR operations, enhance employee experiences, and enable data-driven decision-making through intuitive, scalable, and secure HR solutions for businesses of all sizes.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Goals Section -->
+    <section class="goals-section">
+        <h2>Our Goals</h2>
+        <div class="goals-grid">
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-chart-line"></i></div>
+                <h3>Increase Efficiency</h3>
+                <p>Streamline HR processes and reduce administrative overhead by up to 70% through automation and intelligent workflows.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-users"></i></div>
+                <h3>Employee Engagement</h3>
+                <p>Foster a positive workplace culture by improving employee satisfaction, retention, and career development opportunities.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-shield-alt"></i></div>
+                <h3>Data Security</h3>
+                <p>Ensure complete protection of sensitive employee data with enterprise-grade security and compliance standards.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-globe"></i></div>
+                <h3>Global Accessibility</h3>
+                <p>Provide accessible HR management solutions to organizations worldwide, supporting multiple languages and compliance requirements.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-cogs"></i></div>
+                <h3>Scalability</h3>
+                <p>Build flexible platforms that grow with your organization, supporting teams from 10 to 10,000+ employees.</p>
+            </div>
+            <div class="goal-card">
+                <div class="goal-icon"><i class="fas fa-handshake"></i></div>
+                <h3>Partnership</h3>
+                <p>Create lasting relationships with clients by delivering exceptional support, training, and continuous innovation.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Features Section -->
+    <section class="features-section">
+        <h2>Key Features</h2>
+        <div class="features-grid">
+            <div class="feature-item">
+                <img src="https://images.unsplash.com/photo-1552664730-d307ca884978?w=300&h=200&fit=crop" alt="Employee Management">
+                <h3>Employee Management</h3>
+                <p>Comprehensive employee profiles and detailed records management for streamlined HR operations.</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://images.unsplash.com/photo-1452365679306-200d535a5f87?w=300&h=200&fit=crop" alt="Leave and Attendance">
+                <h3>Leave & Attendance Management</h3>
+                <p>Track employee attendance and manage leave requests with automated approval workflows.</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://images.unsplash.com/photo-1552966750-26e7d12bc4f3?w=300&h=200&fit=crop" alt="Training and Development">
+                <h3>Training & Development Monitoring</h3>
+                <p>Monitor employee training programs and professional development progress seamlessly.</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://images.unsplash.com/photo-1552664730-0b76e2c3aa78?w=300&h=200&fit=crop" alt="HR Communication">
+                <h3>HR Communication Board</h3>
+                <p>Centralized announcement board for HR communications, updates, and company-wide notices.</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://images.unsplash.com/photo-1551288049-bebda4e38f71?w=300&h=200&fit=crop" alt="Dashboard Analytics">
+                <h3>Dashboard & Data Analytics</h3>
+                <p>Powerful analytics dashboard for data-driven HR insights and organizational metrics.</p>
+            </div>
+            <div class="feature-item">
+                <img src="https://images.unsplash.com/photo-1531746790731-6c087a27b8a9?w=300&h=200&fit=crop" alt="Chatbot">
+                <h3>AI Chatbot Support</h3>
+                <p>Intelligent chatbot to handle basic HR inquiries and provide instant employee support 24/7.</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section">
+        <h2>Ready to Transform Your HR?</h2>
+        <p>Join hundreds of organizations already using Civilian HR to manage their teams effectively.</p>
+        <button class="btn btn-cta-large" onclick="openSignupModal()">Start Your Free Trial</button>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="footer-content">
+            <div class="footer-section">
+                <h4>About Civilian HR</h4>
+                <p>Leading HR management platform for modern businesses.</p>
+            </div>
+            <div class="footer-section">
+                <h4>Quick Links</h4>
+                <ul>
+                    <li><a href="#home">Home</a></li>
+                    <li><a href="#features">Features</a></li>
+                    <li><a href="#about">About</a></li>
+                    <li><a href="#contact">Contact</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Legal</h4>
+                <ul>
+                    <li><a href="privacy-policy.html" target="_blank">Privacy Policy</a></li>
+                    <li><a href="terms-of-service.html" target="_blank">Terms of Service</a></li>
+                    <li><a href="#cookies">Cookie Policy</a></li>
+                </ul>
+            </div>
+            <div class="footer-section">
+                <h4>Follow Us</h4>
+                <div class="social-links">
+                    <a href="https://facebook.com" target="_blank"><i class="fab fa-facebook"></i></a>
+                    <a href="https://twitter.com" target="_blank"><i class="fab fa-twitter"></i></a>
+                    <a href="https://linkedin.com" target="_blank"><i class="fab fa-linkedin"></i></a>
+                    <a href="https://instagram.com" target="_blank"><i class="fab fa-instagram"></i></a>
+                </div>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            <p>&copy; 2026 Civilian HR. All rights reserved. | Designed with <i class="fas fa-heart"></i> for modern businesses</p>
+        </div>
+    </footer>
+
+    <!-- Login Modal -->
+    <div id="loginModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeLoginModal()">&times;</span>
+            <h2>Login to Civilian HR</h2>
+            <form class="login-form">
+                <div class="form-group">
+                    <label for="login-email">Email Address</label>
+                    <input type="email" id="login-email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Your password" required>
+                </div>
+                <button type="submit" class="btn btn-submit">Login</button>
+                <p class="form-toggle" style="text-align:center; margin-top: 1rem;">
+                    Don't have an account? <a href="#" onclick="toggleModals(event)">Sign Up here</a>
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <!-- Signup Modal -->
+    <div id="signupModal" class="modal">
+        <div class="modal-content">
+            <span class="close" onclick="closeSignupModal()">&times;</span>
+            <h2>Create Your Account</h2>
+            <form class="signup-form">
+                <div class="form-group">
+                    <label for="signup-fname">First Name</label>
+                    <input type="text" id="signup-fname" placeholder="Your first name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-lname">Last Name</label>
+                    <input type="text" id="signup-lname" placeholder="Your last name" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-email">Email Address</label>
+                    <input type="email" id="signup-email" placeholder="your@email.com" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-birthday">Date of Birth</label>
+                    <input type="date" id="signup-birthday" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-gender">Gender</label>
+                    <select id="signup-gender" required>
+                        <option value="">Select Gender</option>
+                        <option value="male">Male</option>
+                        <option value="female">Female</option>
+                    </select>
+                </div>
+                <div class="form-group">
+                    <label for="signup-password">Password</label>
+                    <input type="password" id="signup-password" placeholder="Create a password" required>
+                </div>
+                <div class="form-group">
+                    <label for="signup-confirm">Confirm Password</label>
+                    <input type="password" id="signup-confirm" placeholder="Confirm your password" required>
+                </div>
+                <div class="form-agree">
+                    <input type="checkbox" id="agree-terms" required>
+                    <label for="agree-terms">
+                        I agree to the <a href="terms-of-service.html" target="_blank">Terms of Service</a> and 
+                        <a href="privacy-policy.html" target="_blank">Privacy Policy</a>
+                    </label>
+                </div>
+                <button type="submit" class="btn btn-submit">Create Account</button>
+                <p class="form-toggle">Already have an account? <a href="#" onclick="toggleModals(event)">Login here</a></p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
